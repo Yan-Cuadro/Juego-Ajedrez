@@ -3,6 +3,7 @@ package ajedrez;
 import ajedrez.componentes.CrearTablero;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class JuegoAjedrez {
 
@@ -21,8 +22,12 @@ public class JuegoAjedrez {
         
         ventana.add(tablero.crearCuadricula());
 
+        ventana.setResizable(false);
+
         // Hacer visible la ventana
         ventana.setVisible(true);
+        JOptionPane.showMessageDialog(null, "Para reiniciar el juego presione Ctrl+R", "Instrucción", JOptionPane.INFORMATION_MESSAGE);
+
 
     }
 

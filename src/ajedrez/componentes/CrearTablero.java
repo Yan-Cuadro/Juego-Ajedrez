@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 
 public class CrearTablero {
 
@@ -26,6 +28,7 @@ public class CrearTablero {
 
 
     public JPanel crearCuadricula() {
+        //JOptionPane.showMessageDialog(null, "Para reiniciar el juego presione Ctrl+R", "Instrucción", JOptionPane.INFORMATION_MESSAGE);
 
         // Crear panel con layout de 8x8
         JPanel panelTablero = new JPanel();
@@ -43,6 +46,15 @@ public class CrearTablero {
 
         // Colocamos las piezas
         colocarPiezasIniciales();
+        panelTablero.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW)
+                .put(KeyStroke.getKeyStroke(KeyEvent.VK_R, InputEvent.CTRL_DOWN_MASK), "reiniciar");
+
+        panelTablero.getActionMap().put("reiniciar", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                reiniciarJuego();
+            }
+        });
         return panelTablero;
     }
 

@@ -3,6 +3,9 @@
 Este es un juego de ajedrez desarrollado en Java con interfaz gráfica creada en Swing.
 Incluye todas las reglas del ajedrez: movimientos normales, movimientos especiales (enroque, captura al paso y coronación) y control de turnos.
 
+> [!TIP]
+> Recuerda que para reiniciar el juego presiona Ctrl+R
+
 
 ## Tecnologías
 
